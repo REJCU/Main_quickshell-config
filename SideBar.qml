@@ -73,7 +73,7 @@ Scope {
 
         Rectangle {
           id: rightsidecontent 
-          color: Theme.fg
+          color: Theme.bg
           anchors.margins: 2
           radius: 13 
           anchors.rightMargin: -25
