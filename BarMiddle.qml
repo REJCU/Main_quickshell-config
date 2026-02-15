@@ -3,6 +3,7 @@ import Quickshell.Wayland
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import "./modules" as Modules
 
 Scope {
     Variants {
@@ -96,7 +97,11 @@ Scope {
                             id: topIconsRef
                             anchors.centerIn: parent
                         }
-                    }
+
+                        //Item { Layout.fillWidth: true}
+                        // Need to make a dropdown menu for it 
+                        // Modules.SystemTray {}
+                      }
 
                     Text {
                         // Using a fixed string or ensuring Systemstats returns valid data
