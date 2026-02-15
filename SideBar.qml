@@ -70,48 +70,55 @@ Scope {
 
           // propogateComposedEvents: true
         }
-
         Rectangle {
-          id: rightsidecontent 
-          color: Theme.bg
-          anchors.margins: 2
-          radius: 13 
-          anchors.rightMargin: -25
+            anchors.fill: parent
+            color: Theme.bg
+            radius: 12
+            border.color: Theme.outlineVariant
+            border.width: 1
 
-          anchors {
-            top: parent.top
-            bottom: parent.bottom
-            left: parent.left
+            // CONTENT LAYOUT
+            ColumnLayout {
+                anchors.fill: parent
+                anchors.margins: 16
+                spacing: 12
 
-            right: parent.right
-            rightMargin: -20
-          }
+                Text {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: "Control Center"
+                    color: Theme.tertiary
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 14
+                }
 
+                // Put this for all the media, volume and other
 
-          ColumnLayout {
-            anchors.centerIn: parent
-            opacity: sidebar.width > 100 ? 1 : 0 // Hide text when small
+                // Vertical Spacer: This pushes "Hello!" to the center
+                Item { Layout.fillHeight: true }
 
-            width: parent.width - 20 
-            height: parent.height
-            anchors.left: parent.left
-            anchors.margins: 10
+                Text {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: "Hello!"
+                    color: Theme.tertiary
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 20
+                }
 
+                ClockWidget {
+                  Layout.alignment: Qt.AlignHCenter
+                }
 
-            Behavior on opacity { NumberAnimation { duration: 200 } }
+                // Another Spacer
+                Item { Layout.fillHeight: true }
+                
+                Text {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: "Hello world!"
+                    color: Theme.tertiary
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 12
+                }
 
-            Text {
-              text: "Hello world" 
-              color: Theme.fg
-            }
-            
-            Item {
-              Layout.fillHeight: true
-              Layout.fillWidth: true
-              Text {text: "Hello world"}
-              
-
-            }
 
         }
       }

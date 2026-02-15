@@ -16,8 +16,8 @@ RowLayout {
             id: iconWrapper
             
             // Layout properties for the RowLayout
-            Layout.preferredWidth: 36
-            Layout.preferredHeight: 36
+            Layout.preferredWidth: 34
+            Layout.preferredHeight: 34
             
             radius: 8
             // Visual feedback: Highlight the background if the window is focused
