@@ -30,8 +30,8 @@ Scope {
         //  NumberAnimation {
           //  duration: 800
             // easing.type: Easing.OutBack
-         // }
-        // }
+          //}
+         //}
 
       // Behavior on implicitHeight {
         // NumberAnimation {
@@ -109,6 +109,8 @@ Scope {
               Layout.fillHeight: true
               Layout.fillWidth: true
               Text {text: "Hello world"}
+              
+
             }
 
         }

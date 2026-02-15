@@ -19,11 +19,14 @@ Scope {
             WlrLayershell.namespace: "bar"
             WlrLayershell.exclusiveZone: height
 
+            // 1. Remove left/right anchors so it doesn't stretch to screen edges
             anchors {
                 top: true
-                left: true
-                right: true
             }
+
+            // 2. Window width follows the background rectangle
+            width: statusBar.width + margins.left + margins.right
+            height: 38
 
             margins {
                 top: 0
@@ -31,35 +34,34 @@ Scope {
                 right: 10
             }
 
-            implicitHeight: 38
-
             Rectangle {
                 id: statusBar
-                anchors.fill: parent
+                // 3. This is the key: width is determined by the Layout's implicit size
+                width: mainLayout.implicitWidth + 40 // 40 = total horizontal padding
+                height: 38
+                anchors.horizontalCenter: parent.horizontalCenter
+                
                 color: Theme.bg 
                 radius: 15 
-                
-                // --- STEP 1: REMOVE BORDER ---
                 border.width: 0 
 
-                // --- STEP 2: SIMPLIFIED TOP FLATTENER ---
+                // Top Flattener
                 Rectangle {
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.top: parent.top
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        top: parent.top
+                    }
                     height: parent.radius
                     color: parent.color
-                    
-                    // No border needed here either
-                    border.width: 0
                     z: 1
                 }
 
                 RowLayout {
-                    anchors.fill: parent
-                    anchors.leftMargin: 15
-                    anchors.rightMargin: 15
-                    spacing: 10
+                    id: mainLayout
+                    // 4. Center the layout and let it breathe
+                    anchors.centerIn: parent
+                    spacing: 20 // Space between modules
                     z: 2 
                     
                     Text {
@@ -69,33 +71,51 @@ Scope {
                         font.family: "JetBrainsMono Nerd Font"
                         
                         MouseArea {
-                          anchors.fill: parent
-                          cursorShape: Qt.PointingHandCursor
-                          onClicked: {
-                            ControlPanel.active = !ControlPanel.active
-                          }
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: ControlPanel.active = !ControlPanel.active
                         } 
                     }
                     
                     Workspaces {
-                        Layout.alignment: Qt.AlignLeft
+                        // Ensure this component has an implicitWidth defined internally!
+                        Layout.alignment: Qt.AlignVCenter
                     }
 
-                    Item {
-                        Layout.fillWidth: true
+                    // 5. The Center Pill as a layout item
+                    Rectangle {
+                        id: centerPill
+                        implicitWidth: topIconsRef.implicitWidth + 24
+                        implicitHeight: 30
+                        radius: 12
+                        color: Theme.fg
+                        // change to see borders and other
+                        Layout.alignment: Qt.AlignVCenter
+
+                        DockIcons {
+                            id: topIconsRef
+                            anchors.centerIn: parent
+                        }
                     }
 
                     Text {
-                        text: `CPU: ${Systemstats.cpuUsage}% | RAM: ${Systemstats.memUsage}% | Temp: ${Systemstats.temp}°C | ${Systemstats.isCharging ? "󱐋 " : "󰁹 "}${Systemstats.batteryLevel}%` 
+                        // Using a fixed string or ensuring Systemstats returns valid data
+                        text: `CPU: ${Systemstats.cpuUsage}% | RAM: ${Systemstats.memUsage}% | ${Systemstats.isCharging ? "󱐋 " : "󰁹 "}${Systemstats.batteryLevel}%` 
                         color: (Systemstats.batteryLevel < 20 && !Systemstats.isCharging) ? Theme.error : Theme.tertiary 
                         font.pixelSize: 14
                         font.family: "JetBrainsMono Nerd Font" 
-                        Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+                        Layout.alignment: Qt.AlignVCenter
                     }
 
                     ClockWidget {
-                        Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+                        Layout.alignment: Qt.AlignVCenter
                     }
+                }
+                
+                // Optional: Smooth width transitions
+                Behavior on width {
+                  // to change animation type
+                    NumberAnimation { duration: 200; easing.type: Easing.OutBack }
                 }
             }
         }

@@ -8,7 +8,7 @@ RowLayout {
     spacing: 10
     
     Repeater {
-        model: 9
+        model: Hyprland.workspaces.values
         Text {
             property var ws: Hyprland.workspaces.values.find(w => w.id === index + 1)
             property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1)
