@@ -41,15 +41,15 @@ RowLayout {
             }
             
             // Small indicator dot at the bottom for active apps
-            Rectangle {
-                anchors.bottom: parent.bottom
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.bottomMargin: 2
-                width: 4; height: 4
-                radius: 2
-                color: "white"
-                visible: modelData.active
-            }
+            //Rectangle {
+              //  anchors.bottom: parent.bottom
+               // anchors.horizontalCenter: parent.horizontalCenter
+                //anchors.bottomMargin: 2
+                //width: 4; height: 4
+                //radius: 2
+                //color: "white"
+                // visible: modelData.active
+            // }
         }
     }
 }

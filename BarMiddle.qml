@@ -89,7 +89,7 @@ Scope {
                         implicitWidth: topIconsRef.implicitWidth + 24
                         implicitHeight: 30
                         radius: 12
-                        color: Theme.fg
+                        color: Theme.bg
                         // change to see borders and other
                         Layout.alignment: Qt.AlignVCenter
 
