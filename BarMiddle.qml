@@ -93,10 +93,12 @@ Scope {
                         // change to see borders and other
                         Layout.alignment: Qt.AlignVCenter
 
-                        DockIcons {
-                            id: topIconsRef
-                            anchors.centerIn: parent
-                        }
+                        //DockIcons {
+                         //   id: topIconsRef
+                         //   anchors.centerIn: parent
+			 //}
+			// add music player 
+			//Text { text: "add Music player"; color: Theme.primary; anchors.centerIn: parent}
 
                         //Item { Layout.fillWidth: true}
                         // Need to make a dropdown menu for it 
