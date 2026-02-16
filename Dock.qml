@@ -57,6 +57,8 @@ Scope {
                 }
             }
 
+            
+
             Rectangle {
                 id: dockContentLayout
                 anchors.fill: parent 

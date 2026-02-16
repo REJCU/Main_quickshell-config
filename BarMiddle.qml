@@ -107,8 +107,8 @@ Scope {
 
                     Text {
                         // Using a fixed string or ensuring Systemstats returns valid data
-			text: `CPU: ${Systemstats.cpuUsage}% | RAM: ${Systemstats.memUsage}% | ${Systemstats.isCharging ? "󱐋 " : "󰁹 "}${Systemstats.batteryLevel}%` 
-                        color: (Systemstats.batteryLevel < 20 && !Systemstats.isCharging) ? Theme.error : Theme.tertiary
+			text: `CPU: ${Systemstats.cpuUsage}% | RAM: ${Systemstats.memUsage}% | ${Systemstats.isCharging ? "󱐋 " : "󰁹 "}${Systemstats.batteryLevel}% |` 
+                        color: (Systemstats.batteryLevel < 20 && !Systemstats.isCharging) ? Theme.error : Theme.primary
                         font.pixelSize: 14
                         font.family: "JetBrainsMono Nerd Font" 
                         Layout.alignment: Qt.AlignVCenter
@@ -116,7 +116,16 @@ Scope {
 
                     ClockWidget {
                         Layout.alignment: Qt.AlignVCenter
+                        color: Theme.primary
                     }
+                    // could add something to back to change color
+                    Text {
+                      text: ""
+                      Layout.alignment: Qt.AlignVCenter
+                      color: Theme.tertiary
+                      // add dropdown for calender
+                    }
+
                 }
                 
                 // Optional: Smooth width transitions

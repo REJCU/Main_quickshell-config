@@ -4,27 +4,10 @@ import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
 
+// Where text is replace with object - item 
+
 //Item {
-//	implicitWidth: wsRow.width
-//	implicitHeight: 30
-//	// Object that moves	
-//	Rectangle {
-//		id: movingBall
-//		width: 10
-//		height: 10
-//		radius: 6 
-//		color: Theme.fg
-//		y: 3
-//
-//		x: (active - 1 ) * 35 + 5
-//
-//		Behavior on x {
-//			NumberAnimation {
-//				duration: 250
-//				easing.type: Easing.OutQuint
-//			}
-//		}
-//	}
+  
 //}
 
 RowLayout {

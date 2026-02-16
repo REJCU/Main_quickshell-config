@@ -3,38 +3,38 @@ import QtQuick
 
 QtObject {
     // Backgrounds & Surfaces
-    readonly property color bg: "#131314"
-    readonly property color bgContainer: "#1f2021"
-    readonly property color bgContainerLow: "#1b1c1c"
-    readonly property color bgContainerHigh: "#292a2b"
-    readonly property color surfaceVariant: "#464748"
+    readonly property color bg: "#f8f9ff"
+    readonly property color bgContainer: "#eceef4"
+    readonly property color bgContainerLow: "#f2f3f9"
+    readonly property color bgContainerHigh: "#e6e8ee"
+    readonly property color surfaceVariant: "#dee3eb"
     
     // Primary Accent
-    readonly property color primary: "#bcc8d3"
-    readonly property color on_primary: "#26323a"
-    readonly property color primaryContainer: "#3d4851"
-    readonly property color on_primaryContainer: "#d8e4ef"
+    readonly property color primary: "#32618d"
+    readonly property color on_primary: "#ffffff"
+    readonly property color primaryContainer: "#d0e4ff"
+    readonly property color on_primaryContainer: "#001d34"
     
     // Secondary Accent
-    readonly property color secondary: "#c1c7ce"
-    readonly property color on_secondary: "#2b3136"
-    readonly property color secondaryContainer: "#41484d"
-    readonly property color on_secondaryContainer: "#dde3ea"
+    readonly property color secondary: "#526070"
+    readonly property color on_secondary: "#ffffff"
+    readonly property color secondaryContainer: "#d6e4f7"
+    readonly property color on_secondaryContainer: "#0f1d2a"
     
     // Tertiary Accent (Great for Temp/System stats)
-    readonly property color tertiary: "#b6c9d8"
-    readonly property color on_tertiary: "#21323e"
-    readonly property color tertiaryContainer: "#374955"
-    readonly property color on_tertiaryContainer: "#d2e5f5"
+    readonly property color tertiary: "#695779"
+    readonly property color on_tertiary: "#ffffff"
+    readonly property color tertiaryContainer: "#f0dbff"
+    readonly property color on_tertiaryContainer: "#241532"
     
     // Text & Foregrounds
-    readonly property color on_surface: "#e4e2e3"
-    readonly property color on_surfaceVariant: "#c7c6c7" // Perfect for "Muted" text
+    readonly property color on_surface: "#191c20"
+    readonly property color on_surfaceVariant: "#42474e" // Perfect for "Muted" text
     
     // Status & Misc
-    readonly property color error: "#ffb4ab"
-    readonly property color on_error: "#690005"
-    readonly property color outline: "#919091"
-    readonly property color outlineVariant: "#464748"
+    readonly property color error: "#ba1a1a"
+    readonly property color on_error: "#ffffff"
+    readonly property color outline: "#73777f"
+    readonly property color outlineVariant: "#c2c7cf"
     readonly property color shadow: "#000000"
 }
