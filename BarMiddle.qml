@@ -120,7 +120,7 @@ Scope {
                 // Optional: Smooth width transitions
                 Behavior on width {
                   // to change animation type
-                    NumberAnimation { duration: 200; easing.type: Easing.OutBack }
+                    NumberAnimation { duration: 50; easing.type: Easing.OutExpo }
                 }
             }
         }
