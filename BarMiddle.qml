@@ -62,7 +62,7 @@ Scope {
                     id: mainLayout
                     // 4. Center the layout and let it breathe
                     anchors.centerIn: parent
-                    spacing: 20 // Space between modules
+                    spacing: 10 // Space between modules
                     z: 2 
                     
                     Text {
