@@ -91,6 +91,14 @@ Scope {
                     font.pixelSize: 14
                 }
 
+		Text {
+		    Layout.alignment: Qt.AlignHCenter
+		    text: "Power off, lock, restart"
+		    color: Theme.tertiary
+		    font.family: "JetBrainsMono"
+		    font.pixelSize: 14
+		}
+
                 // Put this for all the media, volume and other
 
                 // Vertical Spacer: This pushes "Hello!" to the center
