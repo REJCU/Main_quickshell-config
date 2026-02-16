@@ -110,7 +110,7 @@ Scope {
 
 
 			Rectangle {
-				Layout.fillWidth: 200
+				Layout.fillWidth: true
 				Layout.preferredHeight: 220
 				Layout.columnSpan: 4
 				Text {text: "Music Player"; anchors.centerIn: parent}
