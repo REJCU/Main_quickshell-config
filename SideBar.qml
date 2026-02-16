@@ -99,6 +99,43 @@ Scope {
 		    font.pixelSize: 14
 		}
 
+		GridLayout {
+			columns: 4 
+			
+			//anchors.fill: parent
+			Layout.fillWidth: true
+			columnSpacing: 10 
+			rowSpacing: 10
+
+
+
+			Rectangle {
+				Layout.fillWidth: 200
+				Layout.preferredHeight: 220
+				Layout.columnSpan: 4
+				Text {text: "Music Player"; anchors.centerIn: parent}
+			}
+			
+			Rectangle {
+				Layout.columnSpan: 2 
+				Layout.rowSpan: 2 
+				Layout.preferredWidth: 200
+				Layout.preferredHeight: 150
+				color: Theme.fg
+				Text {text: "Weather"; anchors.centerIn: parent}
+			}
+			
+			Rectangle {
+				Layout.columnSpan: 1
+				Layout.preferredWidth: 80
+				Layout.preferredHeight: 80
+				color: "gray"
+				Text { text: "Wifi"; anchors.centerIn: parent}
+			}
+			Item {Layout.fillWidth: true; Layout.fillHeight: true}
+		}
+
+
                 // Put this for all the media, volume and other
 
                 // Vertical Spacer: This pushes "Hello!" to the center
