@@ -14,7 +14,7 @@ Item {
 
   property string mainFont: "JetBrainsMonoNF-Regular"
   property string symbolFont: "Symbols Nerd Font Mono"
-  property int pointSize: 11
+  property int pointSize: 9
   property int symbolSize: pointSize * 1.37
   property string symbolText
   property bool dim
@@ -23,7 +23,8 @@ Item {
     id: mainText
     text: wrapSymbols(symbolText)
     anchors.centerIn: parent
-    color: dim ? "#CCCCCC" : "white"
+    //color: dim ? "#CCCCCC" : "white"
+    color: Theme.primary
     textFormat: Text.RichText
     font {
       family: mainFont

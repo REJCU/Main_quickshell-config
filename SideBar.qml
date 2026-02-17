@@ -3,6 +3,7 @@ import Quickshell.Wayland
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import "./modules" as Modules
 
 Scope {
   Variants {
@@ -113,7 +114,10 @@ Scope {
 				Layout.fillWidth: true
 				Layout.preferredHeight: 220
 				Layout.columnSpan: 4
-				Text {text: "Music Player"; anchors.centerIn: parent}
+        Modules.MusicPlayer {
+        id: musicPlayer
+        anchors.centerIn: parent
+                        }
 			}
 			
 			Rectangle {

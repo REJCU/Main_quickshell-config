@@ -96,18 +96,23 @@ Scope {
 		    var str = activeWindowTitle
 		    return str.length > chopLength ? str.slice(0, chopLength) + '...' : str;
           }
-
 		    }
+
 
                     // 5. The Center Pill as a layout item
                     Rectangle {
                         id: centerPill
-                        implicitWidth: topIconsRef.implicitWidth + 24
+                        implicitWidth: musicPlayer.implicitWidth + 24
                         implicitHeight: 30
                         radius: 12
                         color: Theme.bg
                         // change to see borders and other
                         Layout.alignment: Qt.AlignVCenter
+
+                        Modules.MusicPlayer {
+                          id: musicPlayer
+                          anchors.centerIn: parent
+                        }
 
                         //DockIcons {
                          //   id: topIconsRef
