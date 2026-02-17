@@ -114,10 +114,17 @@ Scope {
 				Layout.fillWidth: true
 				Layout.preferredHeight: 220
 				Layout.columnSpan: 4
-        Modules.MusicPlayer {
-        id: musicPlayer
-        anchors.centerIn: parent
-                        }
+				color: "transparent"
+
+			//Modules.MusicPlayer {
+			//id: musicPlayer
+			//anchors.centerIn: parent
+                        //}
+
+			Modules.MusicImage {
+			id: musicImage
+			anchors.centerIn: parent
+			}
 			}
 			
 			Rectangle {

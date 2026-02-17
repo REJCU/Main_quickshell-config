@@ -9,5 +9,5 @@ Scope {
   BarMiddle {}
   Dock {}
   
-  //SideBar {}
+  SideBar {}
 }
