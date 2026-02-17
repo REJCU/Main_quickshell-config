@@ -83,6 +83,22 @@ Scope {
                         Layout.alignment: Qt.AlignVCenter
                     }
 
+		    Modules.ActiveWorkspace {
+			id: nameworkspace
+			Layout.alignment: Qt.AlignVCenter
+
+			chopLength: {
+            			var space = Math.floor(rootWindow.width)
+            			return space * 0.08;
+			}
+			  symbolText: {
+				  text:
+		    var str = activeWindowTitle
+		    return str.length > chopLength ? str.slice(0, chopLength) + '...' : str;
+          }
+
+		    }
+
                     // 5. The Center Pill as a layout item
                     Rectangle {
                         id: centerPill
