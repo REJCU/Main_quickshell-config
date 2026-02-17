@@ -15,7 +15,7 @@ Item {
         id: art
 	anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
-	source: rootPlayer.active?.trackArtUrl ?? ""
+	source: rootPlayer.trackArtUrl ?? ""
 	asynchronous: true
 	onSourceChanged: console.log("Art URL is:", source)
 	
@@ -35,7 +35,7 @@ Item {
         anchors.top: art.bottom
         anchors.topMargin: 20
         anchors.horizontalCenter: art.horizontalCenter
-        text: rootPlayer.player?.trackTitle ?? "No Media"
+        text: rootPlayer.trackTitle ?? ""
         color: "white"
         width: parent.width
         horizontalAlignment: Text.AlignHCenter
