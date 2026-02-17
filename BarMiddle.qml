@@ -108,10 +108,10 @@ Scope {
                     Text {
                         // Using a fixed string or ensuring Systemstats returns valid data
 			text: `CPU: ${Systemstats.cpuUsage}% | RAM: ${Systemstats.memUsage}% | ${Systemstats.isCharging ? "󱐋 " : "󰁹 "}${Systemstats.batteryLevel}% |` 
-                        color: (Systemstats.batteryLevel < 20 && !Systemstats.isCharging) ? Theme.error : Theme.primary
                         font.pixelSize: 14
                         font.family: "JetBrainsMono Nerd Font" 
                         Layout.alignment: Qt.AlignVCenter
+			color: Theme.primary
                     }
 
                     ClockWidget {
@@ -122,7 +122,7 @@ Scope {
                     Text {
                       text: ""
                       Layout.alignment: Qt.AlignVCenter
-                      color: Theme.tertiary
+                      color: Theme.primary
                       // add dropdown for calender
                     }
 

@@ -8,5 +8,6 @@ Scope {
   // BarRight {}
   BarMiddle {}
   Dock {}
-  SideBar {}
+  
+  //SideBar {}
 }
