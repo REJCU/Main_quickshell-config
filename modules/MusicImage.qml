@@ -2,43 +2,39 @@ import QtQuick
 import Quickshell
 import Quickshell.Services.Mpris
 import Quickshell.Io
+import ".."
 
 Item {
-    id: rootPlayer
-    implicitWidth: 300
-    implicitHeight: 300 // Adjusted to fit image + text
+  id: root
+  
 
-    // Accessing the first player safely
-    readonly property var player: Mpris.players.length > 0 ? Mpris.players[0] : null
+  readonly property var player: (Mpris.players && Mpris.players.length > 0) ? Mpris.players[0] : null
 
-    Image {
-        id: art
-	anchors.fill: parent
-        fillMode: Image.PreserveAspectCrop
-	source: rootPlayer.trackArtUrl ?? ""
-	asynchronous: true
-	onSourceChanged: console.log("Art URL is:", source)
-	
+Image {
+  id: image
 
-        // The background/border rectangle should usually be a child or layered behind
-        Rectangle {
-            anchors.fill: parent
-            color: "transparent"
-            border.color: "white"
-            border.width: 1
-            z: -1
-        }
-    }
+  anchors.centerIn: parent
+  //async: true
+  width: 200
+  height: 200
+  source: Mpris.players[0]?.trackArtUrl ?? "" // or whatever end uses for mpris players
+}
 
-    Text {
-        id: title
-        anchors.top: art.bottom
-        anchors.topMargin: 20
-        anchors.horizontalCenter: art.horizontalCenter
-        text: rootPlayer.trackTitle ?? ""
-        color: "white"
-        width: parent.width
-        horizontalAlignment: Text.AlignHCenter
-        elide: Text.ElideRight
-    }
+Text {
+  id: title
+
+  anchors.top: image.bottom
+  anchors.topMargin: 50
+  text: Mpris.players[0]?.trackTitle ?? ""
+
+  // + formatting, e.g. font, color
+}
+
+Text {
+  anchors.top: title.bottom
+  text: Mpris.players[0]?.trackArtist ?? ""
+  color: "white"
+
+  // + formatting
+  }
 }

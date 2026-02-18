@@ -92,60 +92,12 @@ Scope {
                     font.pixelSize: 14
                 }
 
-		Text {
-		    Layout.alignment: Qt.AlignHCenter
-		    text: "Power off, lock, restart"
-		    color: Theme.tertiary
-		    font.family: "JetBrainsMono"
-		    font.pixelSize: 14
-		}
-
-		GridLayout {
-			columns: 4 
-			
-			//anchors.fill: parent
-			Layout.fillWidth: true
-			columnSpacing: 10 
-			rowSpacing: 10
-
-
-
-			Rectangle {
-				Layout.fillWidth: true
-				Layout.preferredHeight: 220
-				Layout.columnSpan: 4
-				color: "transparent"
-
-			//Modules.MusicPlayer {
-			//id: musicPlayer
-			//anchors.centerIn: parent
-                        //}
-
-			Modules.MusicImage {
-			id: musicImage
-			anchors.centerIn: parent
-			}
-			}
-			
-			Rectangle {
-				Layout.columnSpan: 2 
-				Layout.rowSpan: 2 
-				Layout.preferredWidth: 200
-				Layout.preferredHeight: 150
-				color: Theme.fg
-				Text {text: "Weather"; anchors.centerIn: parent}
-			}
-			
-			Rectangle {
-				Layout.columnSpan: 1
-				Layout.preferredWidth: 80
-				Layout.preferredHeight: 80
-				color: "gray"
-				Text { text: "Wifi"; anchors.centerIn: parent}
-			}
-			Item {Layout.fillWidth: true; Layout.fillHeight: true}
-		}
-
+		//Text {
+		  //  Layout.alignment: Qt.AlignHCenter
+		   // text: "Power off, lock, restart"
+		   // color: Theme.tertiary
+		   // font.family: "JetBrainsMono"
+		    //font.pixelSize: 14
 
                 // Put this for all the media, volume and other
 
@@ -166,6 +118,10 @@ Scope {
 
                 // Another Spacer
                 Item { Layout.fillHeight: true }
+
+                Modules.MusicImage {
+                  id: artimage
+                } 
                 
                 Text {
                     Layout.alignment: Qt.AlignHCenter
