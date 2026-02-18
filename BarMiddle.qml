@@ -128,7 +128,7 @@ Scope {
 
                     Text {
                         // Using a fixed string or ensuring Systemstats returns valid data
-			text: `CPU: ${Systemstats.cpuUsage}% | RAM: ${Systemstats.memUsage}% | ${Systemstats.isCharging ? "󱐋 " : "󰁹 "}${Systemstats.batteryLevel}% |` 
+                        text: `CPU: ${Systemstats.cpuUsage}% | RAM: ${Systemstats.memUsage}% | ${Systemstats.isCharging ? "󱐋 " : "󰁹 "}${Systemstats.batteryLevel}% |` 
                         font.pixelSize: 14
                         font.family: "JetBrainsMono Nerd Font" 
                         Layout.alignment: Qt.AlignVCenter
@@ -141,10 +141,10 @@ Scope {
                     }
                     // could add something to back to change color
                     Text {
-                      text: ""
+                      text: ""
                       Layout.alignment: Qt.AlignVCenter
                       color: Theme.primary
-                      // add dropdown for calender
+                      // add dropdown menu 
                     }
 
                 }
